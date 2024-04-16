@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: grpc-server
+  datasource:
+    url: jdbc:mysql://localhost:3306/nasdb?serverTimezone=Asia/Seoul
+    username: admin
+    password: hodooai!!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+
+grpc:
+  server:
+    port: 9200

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="fe9546b6-85c0-4fc4-96c9-d8a22472358c" name="dataserver">
+        <fileTransfer rootFolder="/home/jinkyoungbin/jkb/dataserver" accessType="SFTP" host="hodoo-09.hodoo.ai" port="22" sshConfigId="5be83ca5-5d67-483f-9f6f-ddd0271f505b" sshConfig="jinkyoungbin@hodoo-09.hodoo.ai:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

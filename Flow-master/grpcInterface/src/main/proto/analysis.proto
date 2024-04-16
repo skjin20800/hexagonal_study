@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "haivis.data.lib";
+option java_outer_classname = "GeneralProto";
+
+message AnalysisRequest {
+  repeated bytes images = 1;
+  string inspection_job = 2;
+  string recipe = 3;
+  AnalysisResult analysis_result = 4;
+}
+
+message AnalysisResponse {
+  string result = 1;
+}
+
+message AnalysisResult {
+  repeated ClassificationMetaData classification_metadatas = 1;
+  repeated DetectionData detection_datas = 2;
+}
+
+
+message ClassificationMetaData {
+  int32 image_index =1;
+  repeated float scores = 2;
+  string result_class = 3;
+}
+
+message DetectionData {
+  int32 image_index = 1;
+  string task = 2;
+  repeated DetectionMetaData detection_metadatas = 3;
+}
+
+message DetectionMetaData {
+  string top_left = 1;
+  string bottom_right = 2;
+  string result_class = 3;
+  double bbox_confidence = 4;
+  double class_confidence = 5;
+}
+
+
+service AnalysisService {
+  rpc SendAnalysisData (stream AnalysisRequest) returns (AnalysisResponse);
+}

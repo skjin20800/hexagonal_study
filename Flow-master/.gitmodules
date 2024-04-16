@@ -1,0 +1,3 @@
+[submodule "dataserver"]
+	path = dataserver
+	url = https://github.com/hodoolab/haivis-flow-dataserver
